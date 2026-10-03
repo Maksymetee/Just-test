@@ -1,0 +1,1 @@
+This project was made just for vibe coding and maybe developing some interesting projects
