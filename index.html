@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIBE — Currency Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Холст для слитного неонового следа -->
+<canvas id="trail-canvas"></canvas>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            VIBE
+        </div>
+        <div class="status">
+            <span class="status-dot"></span>
+            LIVE
+        </div>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+
+        <div class="title">
+            <h1>Currency Converter</h1>
+            <p>Live crypto & currency rates</p>
+        </div>
+
+        <!-- CONVERTER -->
+        <div class="converter">
+
+            <!-- FROM -->
+            <div class="currency-box">
+                <div class="currency-header">
+                    <span>FROM</span>
+                    <span id="fromType" class="type">CRYPTO</span>
+                </div>
+
+                <div class="currency-select-row">
+                    <select id="fromCurrency">
+                        <option value="ETH">Ξ Ethereum</option>
+                        <option value="BTC">₿ Bitcoin</option>
+                        <option value="BNB">BNB</option>
+                        <option value="TON">TON</option>
+                        <option value="USD">$ USD</option>
+                        <option value="EUR">€ EUR</option>
+                        <option value="PLN">zł PLN</option>
+                        <option value="UAH">₴ UAH</option>
+                    </select>
+
+                    <input
+                        id="fromAmount"
+                        type="number"
+                        value="1"
+                        min="0"
+                        step="any"
+                        placeholder="0"
+                    >
+                </div>
+
+                <div id="fromPrice" class="price">—</div>
+            </div>
+
+            <!-- SWAP -->
+            <button id="swapButton" class="swap-button">⇅</button>
+
+            <!-- TO -->
+            <div class="currency-box">
+                <div class="currency-header">
+                    <span>TO</span>
+                    <span id="toType" class="type">FIAT</span>
+                </div>
+
+                <div class="currency-select-row">
+                    <select id="toCurrency">
+                        <option value="USD" selected>$ USD</option>
+                        <option value="ETH">Ξ Ethereum</option>
+                        <option value="BTC">₿ Bitcoin</option>
+                        <option value="BNB">BNB</option>
+                        <option value="TON">TON</option>
+                        <option value="EUR">€ EUR</option>
+                        <option value="PLN">zł PLN</option>
+                        <option value="UAH">₴ UAH</option>
+                    </select>
+
+                    <div id="toAmount" class="result">—</div>
+                </div>
+
+                <div id="toPrice" class="price">—</div>
+            </div>
+
+        </div>
+
+        <!-- CHANGE -->
+        <div id="change" class="change">
+            24h: —
+        </div>
+
+        <!-- QUICK PAIRS -->
+        <div class="quick-section">
+            <div class="section-title">Quick pairs</div>
+            <div class="quick-buttons">
+                <button data-from="BTC" data-to="USD">BTC / USD</button>
+                <button data-from="ETH" data-to="USD">ETH / USD</button>
+                <button data-from="BNB" data-to="USD">BNB / USD</button>
+                <button data-from="TON" data-to="USD">TON / USD</button>
+                <button data-from="ETH" data-to="UAH">ETH / UAH</button>
+                <button data-from="USD" data-to="UAH">USD / UAH</button>
+            </div>
+        </div>
+
+        <!-- REFRESH -->
+        <button id="refreshButton" class="refresh">
+            ↻ Update rates
+        </button>
+
+        <div id="updated" class="updated">
+            Updating...
+        </div>
+
+    </main>
+
+    <footer>
+        VIBE © 2026
+    </footer>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
